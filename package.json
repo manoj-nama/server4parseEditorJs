@@ -4,6 +4,7 @@
   "description": "",
   "main": "server-example.js",
   "dependencies": {
+    "@peculiar/webcrypto": "^1.2.3",
     "express": "^4.17.1",
     "jsdom": "^16.4.0"
   },

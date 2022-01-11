@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require("body-parser");
 const jsdom = require("jsdom");
+const { Crypto } = require('@peculiar/webcrypto');
+
 const app = express();
 const hostname = '127.0.0.1';
 const port = 8999;
@@ -70,6 +72,7 @@ const {window} = new JSDOM(`
 </script>`, options);
 
 window.blocks = null
+window.crypto = new Crypto();
 
 app.post('/html2blocks', function (req, res) {
     if (window.editor) {
